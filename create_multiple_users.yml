@@ -1,0 +1,16 @@
+---
+- name: Creating multiple users
+  hosts: webservers
+  become: true
+  tasks:
+  - name: Creating multiple users
+    user:
+      name: "{{item}}"
+      state: present
+    with_items:
+      - user1
+      - user2
+      - user3
+      - user4
+      - user5
+
